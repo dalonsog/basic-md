@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyStyle - MyObserver Design Guide</title>
+		<link href="css/prism.css" rel="stylesheet" type="text/css">
+		<link href="css/mystyle.css" rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width">
+		<meta name="keywords" content="">
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="menu-icon">
+				<i class="material-icons">menu</i>
+			</div>
+			<div class="title">Componentes - Menús</div>
+		</div>
+		<div class="sidebar close">
+			<div class="sidebar-wrapper">
+				<div class="sidebar-header">MyStyle</div>
+				<div class="sidebar-content"></div>
+			</div>
+		</div>
+		<div class="sidebar-mask close"></div>
+		<div class="container">
+			<div class="section">
+				<div class="section-explanation">
+					<div class="section-title">Definición</div>
+					Los menús para las cajas se mostrarán en la esquina superior derecha o izquierda, preferiblemente en la primera. Se utilizará el icono <i>more_vert</i> de la fuente de iconos de Material Design, con altura y anchura de 24px. El icono, además, tendrá un padding de 2px y su fondo cambiará a color gris muy claro MyObserver al pasar por encima, con un border-radius que lo haga totalmente redondo.
+					<p>Al clickar sobre el icono, se desplegará el menú con una transición en su escala de 0% a 100%, con su origen en la esquina superior derecha o izquierda, según la posición del menú. El menú constará de un contenedor y una serie de opciones. En ningún caso debe especificarse el ancho de los elementos, sino que se cogerá automáticamente según lo que ocupen los textos. Las opciones tendrán un padding de 10px en todos sus lados, y su fondo cambiará a color gris muy claro MyObserver al pasar por encima.</p>
+					<p>Al clickar en cualquier punto de la página, se debe cerrar el menú.</p>
+				</div>
+				<div class="section-content">
+					<div class="section-title">Ejemplo</div>
+					<div class="mybox" style="position: relative;">
+						<div class="mybox-header" style="position: relative;">							
+							<div style="font-size: 20px;text-align: left;">Menú derecha</div>
+							<div class="mymenu right">
+								<i class="material-icons">more_vert</i>
+								<div class="mymenu-container">
+									<div class="mymenu-option">Opción 1 bla bla</div>
+									<div class="mymenu-option">Opción 2 bla bla bla</div>
+									<div class="mymenu-option">Opción 3 blabliblo</div>
+									<div class="mymenu-option">Opción 4 blum</div>
+								</div>
+							</div>
+						</div>
+						<div class="mybox-content">
+							<div style="height: 60px;"></div>
+						</div>
+					</div>
+					<div class="mybox" style="position: relative;">
+						<div class="mybox-header" style="position: relative;">
+							<div style="font-size: 20px;text-align: right;">Menú izquierda</div>
+							<div class="mymenu left">
+								<i class="material-icons">more_vert</i>
+								<div class="mymenu-container">
+									<div class="mymenu-option">Opción 1 bla bla</div>
+									<div class="mymenu-option">Opción 2 bla bla bla</div>
+									<div class="mymenu-option">Opción 3 blabliblo</div>
+									<div class="mymenu-option">Opción 4 blum</div>
+								</div>
+							</div>
+						</div>
+						<div class="mybox-content">
+							<div style="height: 60px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<div class="section-code">
+					<div class="section-title">HTML Code</div>
+					<pre><code class="language-html">&lt;div class="mymenu right"&gt;
+	&lt;i class="material-icons"&gt;more_vert&lt;/i&gt;
+	&lt;div class="mymenu-container"&gt;
+		&lt;div class="mymenu-option"&gt;
+			Opción 1 bla bla
+		&lt;/div&gt;
+		&lt;div class="mymenu-option"&gt;
+			Opción 2 bla bla bla
+		&lt;/div&gt;
+		&lt;div class="mymenu-option"&gt;
+			Opción 3 blabliblo
+		&lt;/div&gt;
+		&lt;div class="mymenu-option"&gt;
+			Opción 4 blum
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+					<div class="section-title">JavaScript Code</div>
+					<pre><code class="language-js">// Abrir/cerrar menú
+$('.mymenu i').on('click', function(){
+	$(this).parent().toggleClass('visible');
+});
+// Cerrar al clickar fuera
+$(document).on('click', function(event){
+	$('.mymenu').each(function(i,e){
+		if(!$(e).is(event.target) && 
+		   $(e).has(event.target).length === 0)
+			$(e).removeClass('visible');
+	});
+});</code></pre>
+				</div>
+				<div class="section-code">
+					<div class="section-title">CSS Code</div>
+					<pre><code class="language-css">.mymenu {
+	position: absolute;
+	top: 0;
+	padding: 10px;
+}
+.mymenu.left {
+	left: 0;
+	text-align: left;
+}
+.mymenu.right {
+	right: 0;
+	text-align: right;
+}
+.mymenu i {
+	border-radius: 14px;
+	padding: 2px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+.mymenu i:hover {
+	background-color: #eee;
+}
+.mymenu .mymenu-container {
+	position: absolute;
+	background-color: white;
+	overflow: hidden;
+	transform: scale(0);
+	transition: transform 0.3s;
+	z-index: 999;
+}
+.mymenu.left .mymenu-container {
+	left: 10px;
+	box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+	transform-origin: top left;
+}
+.mymenu.right .mymenu-container {
+	right: 10px;
+	box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.3);
+	transform-origin: top right;
+}
+.mymenu.visible .mymenu-container {
+	transform: scale(1);
+}
+.mymenu .mymenu-option {
+	padding: 10px 20px;
+	cursor: pointer;
+    white-space: nowrap;
+}
+.mymenu .mymenu-option:hover {
+	background-color: #eee;
+}</code></pre>
+				</div>
+			</div>
+		</div>
+		<!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="js/prism.js" type="text/javascript"></script>
+		<script src="js/options.js" type="text/javascript"></script>
+		<script src="js/mystyle.js" type="text/javascript"></script>
+	</body>
+</html>

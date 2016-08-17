@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyStyle - MyObserver Design Guide</title>
+		<link href="css/prism.css" rel="stylesheet" type="text/css">
+		<link href="css/mystyle.css" rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width">
+		<meta name="keywords" content="">
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="menu-icon">
+				<i class="material-icons">menu</i>
+			</div>
+			<div class="title">Componentes - Controles de selección</div>
+		</div>
+		<div class="sidebar close">
+			<div class="sidebar-wrapper">
+				<div class="sidebar-header">MyStyle</div>
+				<div class="sidebar-content"></div>
+			</div>
+		</div>
+		<div class="sidebar-mask close"></div>
+		<div class="container">
+			<div class="section">
+				<div class="section-content">
+					<div class="section-title">Radio Buttons</div>
+					<div class="section-content-wrapper">
+						<div class="myradio-container aligned">
+                			<div class="myradio-button">
+                				<div class="myradio-checked"></div>
+                			</div>
+                			<div class="myradio-label">Opción 1</div>
+            			</div>
+            			<div class="myradio-container aligned">
+                			<div class="myradio-button">
+                				<div class="myradio-checked"></div>
+                			</div>
+                			<div class="myradio-label">Opción 2</div>
+           	 			</div>
+            			<div class="myradio-container aligned disabled">
+                			<div class="myradio-button">
+                				<div class="myradio-checked"></div>
+                			</div>
+                			<div class="myradio-label">Opción 3</div>
+            			</div>
+					</div>
+					<div class="section-title">HTML Code</div>
+					<pre><code class="language-html">&lt;div class="myradio-container aligned"&gt;
+    &lt;div class="myradio-button"&gt;
+        &lt;div class="myradio-checked">&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="myradio-label"&gt;Opción 1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="myradio-container aligned"&gt;
+    &lt;div class="myradio-button"&gt;
+        &lt;div class="myradio-checked"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="myradio-label"&gt;Opción 2&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="myradio-container aligned disabled"&gt;
+    &lt;div class="myradio-button"&gt;
+        &lt;div class="myradio-checked"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="myradio-label"&gt;Opción 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+					<div class="section-title">JavaScript Code</div>
+					<pre><code class="language-js">$('.myradio-container:not(.disabled)').on('click', function(){
+	$(this).parent().find('.myradio-container')
+		   .removeClass('checked');
+	$(this).addClass('checked');
+	// Codificar funcionalidad del radio button
+});</code></pre>				
+					<div class="section-title">CSS Code</div>
+					<pre><code class="language-css">.myradio-container {
+    margin: 10px;
+    cursor: pointer;
+}
+.myradio-container.aligned {
+	display: inline-block;
+}
+.myradio-button {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    border-radius: 9px;
+    border: 2px solid #777;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+.myradio-label {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+    vertical-align: middle;
+}
+.myradio-checked {
+    transform: scale(0);
+    margin: 2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 9px;
+    background-color: #0389c7;
+    transition: transform 0.3s;
+}
+.myradio-container.checked .myradio-checked {
+    transform: scale(1);
+}
+.myradio-container.checked .myradio-button {
+    border-color: #0389c7;
+}
+.myradio-container.disabled .myradio-button{
+	border-color: #ddd;
+}
+.myradio-container.disabled .myradio-label{
+	color: #ddd;
+}</code></pre>
+				</div>
+				<div class="section-content">
+					<div class="section-title">Checkboxes</div>
+					<div class="section-content-wrapper">
+						<div class="mycheckbox-container">
+	                        <div class="mycheckbox-checkbox">
+	                            <i class="material-icons">done</i>
+	                        </div>
+	                        <div class="mycheckbox-label">Opción 1</div>
+	                    </div>
+	                    <div class="mycheckbox-container">
+	                        <div class="mycheckbox-checkbox">
+	                            <i class="material-icons">done</i>
+	                        </div>
+	                        <div class="mycheckbox-label">Opción 2</div>
+	                    </div>
+	                    <div class="mycheckbox-container disabled">
+	                        <div class="mycheckbox-checkbox">
+	                            <i class="material-icons">done</i>
+	                        </div>
+	                        <div class="mycheckbox-label">Opción 3</div>
+	                    </div>
+					</div>
+					<div class="section-title">HTML Code</div>
+					<pre><code class="language-html">&lt;div class="mycheckbox-container"&gt;
+    &lt;div class="mycheckbox-checkbox"&gt;
+        &lt;i class="material-icons">done&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="mycheckbox-label">Opción 1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="mycheckbox-container"&gt;
+    &lt;div class="mycheckbox-checkbox"&gt;
+        &lt;i class="material-icons">done&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="mycheckbox-label">Opción 2&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="mycheckbox-container disabled"&gt;
+    &lt;div class="mycheckbox-checkbox"&gt;
+        &lt;i class="material-icons">done&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="mycheckbox-label">Opción 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+					<div class="section-title">JavaScript Code</div>
+					<pre><code class="language-js">$('.mycheckbox-container:not(.disabled)').on('click', function(){
+	$(this).toggleClass('checked');
+	// Codificar funcionalidad del input
+});</code></pre>				
+					<div class="section-title">CSS Code</div>
+					<pre><code class="language-css">.mycheckbox-container {
+    margin: 10px;
+    cursor: pointer;
+}
+.mycheckbox-container.aligned {
+	display: inline-block;
+}
+.mycheckbox-checkbox {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    border: 2px solid #777;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.mycheckbox-container.checked .mycheckbox-checkbox{
+    background-color: #0389c7;
+    border-color: #0389c7;
+}
+.mycheckbox-checkbox i {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+}
+.mycheckbox-label {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+    vertical-align: middle;
+}
+.mycheckbox-container.disabled .mycheckbox-checkbox{
+	border-color: #ddd;
+}
+.mycheckbox-container.disabled .mycheckbox-label{
+	color: #ddd;
+}</code></pre>
+				</div>
+			</div>
+			</div>
+		</div>
+		<!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="js/prism.js" type="text/javascript"></script>
+		<script src="js/options.js" type="text/javascript"></script>
+		<script src="js/mystyle.js" type="text/javascript"></script>
+	</body>
+</html>

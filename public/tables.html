@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyStyle - MyObserver Design Guide</title>
+		<link href="css/prism.css" rel="stylesheet" type="text/css">
+		<link href="css/mystyle.css" rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width">
+		<meta name="keywords" content="">
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="menu-icon">
+				<i class="material-icons">menu</i>
+			</div>
+			<div class="title">Componentes - Tablas</div>
+		</div>
+		<div class="sidebar close">
+			<div class="sidebar-wrapper">
+				<div class="sidebar-header">MyStyle</div>
+				<div class="sidebar-content"></div>
+			</div>
+		</div>
+		<div class="sidebar-mask close"></div>
+		<div class="container">
+			<div class="section">
+				<div class="section-content">
+					<div class="section-title">Ejemplo</div>
+					<div class="mytable">
+						<!-- Cabecera tabla -->
+						<div class="mytable-header">
+							<div class="mytable-field">Cabecera 1</div>
+							<div class="mytable-field">Cabecera 2</div>
+							<div class="mytable-field">Cabecera 3</div>
+						</div>
+						<!-- Fila 1 -->
+						<div class="mytable-row">
+							<div class="mytable-field">Texto campo</div>
+							<div class="mytable-field">Texto campo</div>
+							<div class="mytable-field">Texto campo</div>
+						</div>
+						<!-- Fila 2 -->
+						<div class="mytable-row">
+							<div class="mytable-field">Texto campo</div>
+							<div class="mytable-field">Texto campo</div>
+							<div class="mytable-field">Texto campo</div>
+						</div>
+						<!-- Fila 3 -->
+						<div class="mytable-row">
+							<div class="mytable-field">Texto campo</div>
+							<div class="mytable-field">Texto campo</div>
+							<div class="mytable-field">Texto campo</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<div class="section-code">
+					<div class="section-title">HTML Code</div>
+					<pre><code class="language-html">&lt;div class="mytable"&gt;
+	&lt;!-- Cabecera tabla --&gt;
+	&lt;div class="mytable-header"&gt;
+		&lt;div class="mytable-field">Cabecera 1&lt;/div&gt;
+		&lt;div class="mytable-field">Cabecera 2&lt;/div&gt;
+		&lt;div class="mytable-field">Cabecera 3&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- Fila 1 --&gt;
+	&lt;div class="mytable-row"&gt;
+		&lt;div class="mytable-field">Texto campo&lt;/div&gt;
+		&lt;div class="mytable-field">Texto campo&lt;/div&gt;
+		&lt;div class="mytable-field">Texto campo&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- Fila 2 --&gt;
+	&lt;div class="mytable-row"&gt;
+		&lt;div class="mytable-field">Texto campo&lt;/div&gt;
+		&lt;div class="mytable-field">Texto campo&lt;/div&gt;
+		&lt;div class="mytable-field">Texto campo&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- Fila 3 --&gt;
+	&lt;div class="mytable-row"&gt;
+		&lt;div class="mytable-field">Texto campo&lt;/div&gt;
+		&lt;div class="mytable-field">Texto campo&lt;/div&gt;
+		&lt;div class="mytable-field">Texto campo&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+					<div class="section-title">JavaScript Code</div>
+					<pre><code class="language-js">No necesario.</code></pre>
+				</div>
+				<div class="section-code">
+					<div class="section-title">CSS Code</div>
+					<pre><code class="language-css">.mytable {
+	padding: 15px;
+	text-align: left;
+	font-size: 0;
+}
+.mytable-header {
+	font-weight: bold;
+}
+.mytable-header,
+.mytable-row {
+	padding: 5px 20px;
+}
+.mytable-row {
+	border-top: 1px solid #ddd;
+}
+.mytable-field {
+	padding: 5px 0px;
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	width: calc(100% / 3);
+}</code></pre>
+				</div>
+			</div>
+		</div>
+		<!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="js/prism.js" type="text/javascript"></script>
+		<script src="js/options.js" type="text/javascript"></script>
+		<script src="js/mystyle.js" type="text/javascript"></script>
+	</body>
+</html>

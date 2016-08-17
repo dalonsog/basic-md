@@ -1,0 +1,198 @@
+.myselect {
+	cursor: pointer;
+	position: relative;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.myselect.container {
+	color: #777;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: normal;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.myselect.select_box {
+	padding: 1px 7px 1px 15px;
+    background-color: white;
+    display: inline-block;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    width: calc(100% - 22px);
+}
+
+
+.myselect.selected_text {
+	display: inline-block;
+	width: calc(100% - 25px);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 22px;
+	height: 22px;
+} 
+
+.myselect.arrow {
+	display: inline-block;
+	width: 20px;
+}
+
+.myselect.active .select_box .arrow i{
+	transform: rotate(180deg);
+}
+
+.myselect.arrow:after {
+	font-family: 'Material Icons';
+}
+
+.myselect.options_box {
+	background-color: white;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    width: 100%;
+}
+
+.myselect.options_container {
+    overflow-y: hidden;
+}
+
+.myselect.container.multiple .myselect.options_container {
+    height: calc(100% - 73px);
+    width: 100%;
+}
+
+.myselect.option {
+	width: 100%;
+}
+
+.myselect.option:hover {
+	background-color: #eee;
+}
+
+.myselect.option_text {
+	padding: 5px 15px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 30px);
+    display: inline-block;
+}
+
+.myselect.multiple .option_text {
+	width: calc(100% - 46px);
+	padding: 0px;
+	margin: 5px 10px;
+	margin-left: 0px;
+}
+
+.myselect.option_checkbox {
+	border: 1px solid #777;
+	margin: 5px 10px;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    color: white;
+	border-radius: 1px;
+}
+
+.myselect.option_checkbox i {
+	position: absolute;
+	display: none;
+	font-size: 15px;
+	top: -1px;
+	left: -1px;
+}
+
+.myselect.option.checked .option_checkbox {
+	background-color: #777;
+}
+
+.myselect.option.checked i {
+	display: block;
+}
+
+.myselect.search_box {
+	margin: 10px;
+	width: calc(100% - 34px);
+	border: 1px solid #999;
+	border-radius: 2px;
+	padding: 3px 0px;
+	cursor: text;
+}
+
+.myselect.search_box input {
+	width: calc(100% - 56px);
+	border: none;
+}
+
+.myselect.search_box input:focus {
+	outline: 0;
+}
+
+.myselect.search_icon {
+	width: 16px;
+	display: inline-block;
+	margin: 0px 6px;
+}
+
+.myselect.search_icon.empty {
+	cursor: pointer;
+}
+
+.myselect.search_icon.empty.hidden {
+	display: none;
+}
+
+.myselect.options_separator {
+	width: 100%;
+	border-top: 1px solid #999;
+	padding: 3px 0px;
+	margin-top: 3px;
+}
+
+/*.myselect.select_all {
+	margin: 0px 10px 3px 10px;
+    cursor: pointer;
+    width: auto;
+    display: inline-block;
+}
+
+.myselect.select_all:hover {
+	text-decoration: underline;
+}*/
+.myselect.seleccionados.checked i{
+    display: block;
+}
+.myselect.seleccionados .option_checkbox {
+    border: 1px solid #0389c7;
+    margin: 5px 10px;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    color: white;
+    border-radius: 1px;
+}
+.myselect.seleccionados.checked .option_checkbox {
+    background-color: #0389c7;
+}
+.myselect.seleccionados .option_text{
+    font-size: 10px;
+}
+.myselect.seleccionados{
+    width: 50%;
+}
+#select_all{
+    float: left;
+}
+#select_select{
+    float: right;
+}
+#div_bloque_select{
+    width: 100%;
+    height: 19px;
+    border-bottom: 1px solid #777;
+    top: -5px;
+    padding-bottom: 5px;
+}

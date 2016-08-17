@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyStyle - MyObserver Design Guide</title>
+		<link href="css/prism.css" rel="stylesheet" type="text/css">
+		<link href="css/mystyle.css" rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width">
+		<meta name="keywords" content="">
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="menu-icon">
+				<i class="material-icons">menu</i>
+			</div>
+			<div class="title">Componentes - Pestañas</div>
+		</div>
+		<div class="sidebar close">
+			<div class="sidebar-wrapper">
+				<div class="sidebar-header">MyStyle</div>
+				<div class="sidebar-content"></div>
+			</div>
+		</div>
+		<div class="sidebar-mask close"></div>
+		<div class="container">
+			<div class="section">
+					<div class="section-title">Ejemplo</div>
+					<div class="mybox">
+						<div class="mybox-header">
+							<div class="mytab-container">
+								<div class="mytab-tab active" data-value="1">Pestaña 1</div>
+								<div class="mytab-tab" data-value="2">Pestaña 2</div>
+								<div class="mytab-tab" data-value="3">Pestaña 3</div>
+								<div class="mytab-tab disabled">Pestaña 4</div>
+							</div>
+						</div>
+						<div class="mybox-content" data-tab="1">
+							Contenido pestaña 1
+						</div>
+						<div class="mybox-content" data-tab="2">
+							Contenido pestaña 2
+						</div>
+						<div class="mybox-content" data-tab="3">
+							Contenido pestaña 3
+						</div>
+					</div>
+			</div>
+			<div class="section">
+				<div class="section-code">
+					<div class="section-title">HTML Code</div>
+					<pre><code class="language-html">&lt;div class="mybox"&gt;
+	&lt;div class="mybox-header"&gt;
+		&lt;div class="mytab-container"&gt;
+			&lt;div class="mytab-tab active" data-value="1"&gt;
+				Pestaña 1
+			&lt;/div&gt;
+			&lt;div class="mytab-tab" data-value="2"&gt;
+				Pestaña 2
+			&lt;/div&gt;
+			&lt;div class="mytab-tab" data-value="3"&gt;
+				Pestaña 3
+			&lt;/div&gt;
+			&lt;div class="mytab-tab disabled"&gt;
+				Pestaña 4
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="mybox-content" data-tab="1"&gt;
+		Contenido pestaña 1
+	&lt;/div&gt;
+	&lt;div class="mybox-content" data-tab="2"&gt;
+		Contenido pestaña 2
+	&lt;/div&gt;
+	&lt;div class="mybox-content" data-tab="3"&gt;
+		Contenido pestaña 3
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+					<div class="section-title">JavaScript Code</div>
+					<pre><code class="language-js">$('.mytab-tab:not(.disabled)').on('click', function(){
+	$(this).parent().find('.mytab-tab').removeClass('active');
+	$(this).toggleClass('active');
+	// Codificar la funcionalidad de la pestaña
+});</code></pre>
+				</div>
+				<div class="section-code">
+					<div class="section-title">CSS Code</div>
+					<pre><code class="language-css">.mytab-container {
+	text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+.mytab-tab {
+	box-sizing: border-box;
+	display: inline-block;
+	padding: 5px 15px;
+	cursor: pointer;
+	transition: border-bottom 0.3s;
+}
+.mytab-tab.active {
+	border-bottom: 2px solid #0389c7;
+	color: #0389c7;
+}
+.mytab-tab.disabled {
+	color: #ddd;
+}</code></pre>
+				</div>
+			</div>
+		</div>
+		<!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="js/prism.js" type="text/javascript"></script>
+		<script src="js/options.js" type="text/javascript"></script>
+		<script src="js/mystyle.js" type="text/javascript"></script>
+	</body>
+</html>

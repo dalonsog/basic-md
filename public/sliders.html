@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyStyle - MyObserver Design Guide</title>
+		<link href="css/prism.css" rel="stylesheet" type="text/css">
+		<link href="css/mystyle.css" rel="stylesheet" type="text/css">
+		<link href="css/nouislider.css" rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width">
+		<meta name="keywords" content="">
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="menu-icon">
+				<i class="material-icons">menu</i>
+			</div>
+			<div class="title">Componentes - Sliders</div>
+		</div>
+		<div class="sidebar close">
+			<div class="sidebar-wrapper">
+				<div class="sidebar-header">MyStyle</div>
+				<div class="sidebar-content"></div>
+			</div>
+		</div>
+		<div class="sidebar-mask close"></div>
+		<div class="container">
+			<div class="section">
+				<div class="section-content">
+					<div class="section-title">Ejemplo</div>
+					<div class="myslider" id="slider1-container"></div>
+					<div class="myslider" id="slider2-container"></div>
+					<div class="myslider" id="slider3-container"></div>
+			
+					<div class="section-title">HTML Code</div>
+					<pre><code class="language-html">&lt;div class="myslider" id="slider1-container"&gt;&lt;/div&gt;
+&lt;div class="myslider" id="slider2-container"&gt;&lt;/div&gt;
+&lt;div class="myslider" id="slider3-container"&gt;&lt;/div&gt;</code></pre>
+					<div class="section-title">JavaScript Code</div>
+					<pre><code class="language-js">var slider1 = $('#slider1-container')[0];
+if (slider1)
+	noUiSlider.create(slider1, {
+		start: 20,
+		connect: 'lower',
+		range: {
+			'min': 0,
+			'max': 100
+		}
+	});
+var slider2 = $('#slider2-container')[0];
+if (slider2)
+	noUiSlider.create(slider2, {
+		start: [20, 80],
+		connect: true,
+		range: {
+			'min': 0,
+			'max': 100
+		}
+	});
+var slider3 = $('#slider3-container')[0];
+if (slider3){
+	noUiSlider.create(slider3, {
+		start: [20, 80],
+		connect: true,
+		range: {
+			'min': 0,
+			'max': 100
+		}
+	});
+	slider3.setAttribute('disabled', true);
+}</code></pre>
+				</div>
+				<div class="section-code">
+					<div class="section-title">CSS Code</div>
+					<pre><code class="language-css">.myslider.noUi-connect,
+.myslider .noUi-connect {
+	background-color: #0389c5;
+	box-shadow: none;
+}
+.myslider.noUi-horizontal {
+	height: 4px;
+}
+.myslider.noUi-target {
+	border: none;
+}
+.myslider.noUi-target.noUi-connect {
+	box-shadow: none;
+}
+.myslider .noUi-handle {
+    border: 1px solid #0389c5;
+    box-shadow: none;
+}
+.myslider.noUi-horizontal .noUi-handle {
+    width: 14px;
+    height: 14px;
+    left: -10px;
+    top: -5px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    background-color: #0389c5;
+    transition: all 0.2s;
+}
+.myslider.noUi-horizontal .noUi-handle:active {
+    width: 24px;
+    height: 24px;
+    left: -15px;
+    top: -10px;
+}
+.myslider .noUi-handle:before,
+.myslider .noUi-handle:after {
+	content: none;
+}
+.myslider.noUi-background,
+.myslider .noUi-background {
+	background-color: #ddd;
+	box-shadow: none;
+}
+.myslider[disabled].noUi-connect, 
+.myslider[disabled] .noUi-connect {
+    background: #bbb;
+    box-shadow: none;
+}
+.myslider[disabled].noUi-origin,
+.myslider[disabled] .noUi-handle {
+    background-color: #bbb;
+    border: 1px solid #bbb;
+}
+</code></pre>
+				</div>
+			</div>
+		</div>
+		<!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="js/prism.js" type="text/javascript"></script>
+		<script src="js/options.js" type="text/javascript"></script>
+		<script src="js/mystyle.js" type="text/javascript"></script>
+		<script src="js/nouislider.js" type="text/javascript"></script>
+	</body>
+</html>

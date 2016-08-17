@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyStyle - MyObserver Design Guide</title>
+		<link href="css/prism.css" rel="stylesheet" type="text/css">
+		<link href="css/mystyle.css" rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width">
+		<meta name="keywords" content="">
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="menu-icon">
+				<i class="material-icons">menu</i>
+			</div>
+			<div class="title">Componentes - Inputs</div>
+		</div>
+		<div class="sidebar close">
+			<div class="sidebar-wrapper">
+				<div class="sidebar-header">MyStyle</div>
+				<div class="sidebar-content"></div>
+			</div>
+		</div>
+		<div class="sidebar-mask close"></div>
+		<div class="container">
+			<div class="section">
+				<div class="section-content">
+					<div class="section-title">Ejemplo</div>
+					<div class="section-content-wrapper">
+						<input class="myinput">
+						<input class="myinput" disabled>
+					</div>				
+					<div class="section-title">HTML Code</div>
+					<pre><code class="language-html">&lt;input class="myinput"&gt;
+&lt;input class="myinput" disabled&gt;</code></pre>
+					<div class="section-title">JavaScript Code</div>
+					<pre><code class="language-js">$('.myinput:not(.disabled)').on('keyup', function() {
+	// Codificar funcionalidad del input
+});</code></pre>
+				</div>
+				<div class="section-code">
+					<div class="section-title">CSS Code</div>
+					<pre><code class="language-css">.myinput {
+    font-size: 16px;
+    color: #0389c7;
+    font-weight: normal;
+    font-family: 'Roboto', 'Arial', sans-serif;    
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    transition: border-color ease-in-out .15s,
+    			box-shadow ease-in-out .15s;
+    border-radius: 4px;
+}
+.myinput[disabled] {
+	background-color: #eee;
+}
+.myinput:focus {
+    border-color: #24ACE9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),
+    					0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),
+    			0 0 8px rgba(102,175,233,.6);
+}</code></pre>
+				</div>
+			</div>
+		</div>
+		<!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="js/prism.js" type="text/javascript"></script>
+		<script src="js/options.js" type="text/javascript"></script>
+		<script src="js/mystyle.js" type="text/javascript"></script>
+	</body>
+</html>

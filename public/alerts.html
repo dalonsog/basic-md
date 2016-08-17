@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyStyle - MyObserver Design Guide</title>
+		<link href="css/prism.css" rel="stylesheet" type="text/css">
+		<link href="css/mystyle.css" rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width">
+		<meta name="keywords" content="">
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="menu-icon">
+				<i class="material-icons">menu</i>
+			</div>
+			<div class="title">Componentes - Alertas</div>
+		</div>
+		<div class="sidebar close">
+			<div class="sidebar-wrapper">
+				<div class="sidebar-header">MyStyle</div>
+				<div class="sidebar-content"></div>
+			</div>
+		</div>
+		<div class="sidebar-mask close"></div>
+		<div class="container">
+			<div class="section">
+				<div class="section-content">
+					<div class="section-title">Ejemplo</div>
+					<div class="myalert default">Alerta por defecto</div>
+					<div class="myalert info">Alerta de información</div>
+					<div class="myalert warning">Alerta de advertencia</div>
+				</div>
+			</div>
+			<div class="section">
+				<div class="section-code">
+					<div class="section-title">HTML Code</div>
+					<pre><code class="language-html">&lt;div class="myalert default"&gt;
+	Alerta por defecto
+&lt;/div&gt;
+&lt;div class="myalert info"&gt;
+	Alerta de información
+&lt;/div&gt;
+&lt;div class="myalert warning"&gt;
+	Alerta de advertencia
+&lt;/div&gt;</code></pre>
+					<div class="section-title">JavaScript Code</div>
+					<pre><code class="language-js">No necesario</code></pre>
+				</div>
+				<div class="section-code">
+					<div class="section-title">CSS Code</div>
+					<pre><code class="language-css">.myalert {
+	padding: 10px 20px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	margin: 20px 0px;
+	text-align: center;
+}
+.myalert.default {
+	background-color: white;
+	color: #777;
+}
+.myalert.info {
+	background-color: #D1F3FF;
+	color: #0389c5;
+}
+.myalert.warning {
+	background-color: #e46c0a;
+	color: white;
+}</code></pre>
+				</div>
+			</div>
+		</div>
+		<!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="js/prism.js" type="text/javascript"></script>
+		<script src="js/options.js" type="text/javascript"></script>
+		<script src="js/mystyle.js" type="text/javascript"></script>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyStyle - MyObserver Design Guide</title>
+		<link href="css/prism.css" rel="stylesheet" type="text/css">
+		<link href="css/myloader.css" rel="stylesheet" type="text/css">
+		<link href="css/mystyle.css" rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width">
+		<meta name="keywords" content="">
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="menu-icon">
+				<i class="material-icons">menu</i>
+			</div>
+			<div class="title">Componentes - Loaders</div>
+		</div>
+		<div class="sidebar close">
+			<div class="sidebar-wrapper">
+				<div class="sidebar-header">MyStyle</div>
+				<div class="sidebar-content"></div>
+			</div>
+		</div>
+		<div class="sidebar-mask close"></div>
+		<div class="container">
+			<div class="section">
+				<div class="section-explanation">
+					<div class="section-title">Definición</div>
+					Los loaders se crearán utilizando la librería MyLoader. No es necesario añadir ningún estilo ya que la librería viene preconfigurada con la estética a utilizar. No obstante, en caso de que sea necesario cambiar algún estilo, se hará pasándole un objeto con los estilos al constructor, NUNCA modificando estilos en un CSS.
+				</div>
+				<div class="section-content">
+					<div class="section-title">Ejemplo</div>
+					<div class="mybox">
+						<div class="mybox-header">
+							<div style="font-size: 20px; display: inline-block;">Cabesa</div>
+							<div id="trigger_loader_button" style="display: inline-block; cursor: pointer; margin-left: 20px; text-decoration: underline;">Cambiar contenido</div>
+						</div>
+						<div class="mybox-content" style="position: relative;">
+							<div style="height: 60px;">
+								<div id="content1">Contenido 1</div>
+								<div id="content2" style="display: none;">Contenido 2</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<div class="section-code">
+					<div class="section-title">HTML Code</div>
+					<pre><code class="language-html">No necesario. Simplemente, el elemento que lo contendrá.</code></pre>
+					<div class="section-title">JavaScript Code</div>
+					<pre><code class="language-js">// Crear un loader pasándole el contenedor
+var loader = new MyLoader($('.mybox-content'));
+$('#trigger_loader_button').on('click', function(){
+	// Mostrar loader (ocultará el resto del contenido)
+	loader.show();
+	// Solo ejemplo. El cambio de contenido 
+	// se controlará en una función aparte.
+	setTimeout(function(){
+		$('#content1, #content2').toggle();
+		// Ocultar loader (mostrará el resto del contenido)
+		loader.hide();
+	},2000);
+});</code></pre>
+				</div>
+				<div class="section-code">
+					<div class="section-title">CSS Code</div>
+					<pre><code class="language-css">No necesario.</code></pre>
+				</div>
+			</div>
+		</div>
+		<!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="js/prism.js" type="text/javascript"></script>
+		<script src="js/options.js" type="text/javascript"></script>
+		<script src="js/d3.js" type="text/javascript"></script>
+		<script src="js/myloader.js" type="text/javascript"></script>
+		<script src="js/mystyle.js" type="text/javascript"></script>
+	</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyStyle - MyObserver Design Guide</title>
+		<link href="css/prism.css" rel="stylesheet" type="text/css">
+		<link href="css/mystyle.css" rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width">
+		<meta name="keywords" content="">
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="menu-icon">
+				<i class="material-icons">menu</i>
+			</div>
+			<div class="title">Componentes - Botones</div>
+		</div>
+		<div class="sidebar close">
+			<div class="sidebar-wrapper">
+				<div class="sidebar-header">MyStyle</div>
+				<div class="sidebar-content"></div>
+			</div>
+		</div>
+		<div class="sidebar-mask close"></div>
+		<div class="container">
+			<div class="section">
+				<div class="section-content">
+					<div class="section-title">Botones generales</div>
+					<div class="section-content-wrapper">
+						<div class="mybutton">Click Me!</div>
+						<div class="mybutton disabled">Can't Click Me :(</div>
+					</div>				
+					<div class="section-title">HTML Code</div>
+					<pre><code class="language-html">&lt;div class="mybutton"&gt;Click Me!&lt;/div&gt;
+&lt;div class="mybutton disabled"&gt;Can't Click Me :(&lt;/div&gt;
+</code></pre>
+					<div class="section-title">JavaScript Code</div>
+					<pre><code class="language-js">$('.mybutton:not(.disabled)').on('click', function(){
+	// Codificar la funcionalidad del botón
+});</code></pre>
+					<div class="section-title">CSS Code</div>
+					<pre><code class="language-css">.mybutton { 
+	color: white;
+	background-color: #0389c5;
+	padding: 10px 15px;
+	font-size: 16px;
+	cursor: pointer;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	transition: background-color 0.3s;
+}
+.mybutton:hover {
+	background-color: #24ACE9;
+}
+.mybutton.disabled {
+	background-color: #ddd;
+}
+.mybutton.disabled:hover {
+	background-color: #ddd;
+}
+</code></pre>
+				</div>
+
+
+				<div class="section-content">
+					<div class="section-title">Botones en diálogos</div>
+					<div class="mybox" style="margin-bottom: 0px;">
+						<div class="mydialog-footer">
+							<div class="mydialog-button disabled">Deshabilitado</div>
+							<div class="mydialog-button">Cancelar</div>
+							<div class="mydialog-button action">Aceptar</div>
+						</div>
+					</div>
+					<div class="section-title">HTML Code</div>
+					<pre><code class="language-html">&lt;div class="mydialog-footer"&gt;
+	&lt;div class="mydialog-button disabled"&gt;
+		Deshabilitado
+	&lt;/div&gt;
+	&lt;div class="mydialog-button"&gt;
+		Cancelar
+	&lt;/div&gt;
+	&lt;div class="mydialog-button action"&gt;
+		Aceptar
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+					<div class="section-title">JavaScript Code</div>
+					<pre><code class="language-js">$('.mydialog-button').on('click', function(){
+	// Codificar la funcionalidad del botón
+});</code></pre>
+					<div class="section-title">CSS Code</div>
+					<pre><code class="language-css">.mydialog-footer {
+	text-align: right;
+	font-weight: bold;
+}
+.mydialog-footer .mydialog-button {
+	cursor: pointer;
+	display: inline-block;
+	margin-left: 20px;
+}
+.mydialog-footer .mydialog-button.action {
+ 	color: #0389c7;
+}
+.mydialog-footer .mydialog-button.disabled {
+ 	color: #ddd;
+}</code></pre>
+				</div>
+
+			</div>
+		</div>
+		<!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="js/prism.js" type="text/javascript"></script>
+		<script src="js/options.js" type="text/javascript"></script>
+		<script src="js/mystyle.js" type="text/javascript"></script>
+	</body>
+</html>

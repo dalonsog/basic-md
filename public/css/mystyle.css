@@ -1,0 +1,1077 @@
+body {
+	font-family: 'Roboto', 'Arial', sans-serif;
+	margin: 0px;
+	color: #777;
+	background-color: #fafafa;
+}
+
+/* MyStyle */
+
+.navbar {
+	background-color: #0389c5;
+	width: 100%;
+	height: 50px;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+	color: white;
+}
+
+.navbar .menu-icon,
+.navbar .title {
+	display: inline-block;
+    vertical-align: middle;
+    line-height: 30px;
+    height: 30px;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+
+.navbar .menu-icon i{
+	cursor: pointer;
+	line-height: 30px;
+}
+
+.container {
+	width: 100%;
+}
+
+.sidebar-mask {
+	visibility: visible;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	top: 0px;
+	left: 0px;
+	z-index: 2;
+}
+
+.sidebar-mask.close {
+	visibility: hidden;
+}
+
+.sidebar {
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    transition: left 0.3s;
+	font-weight: bold;
+    background-color: white;
+    z-index: 3;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(0,0,0,0.14);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar.close {
+	left: -240px;
+}
+
+.sidebar-header {
+	padding: 13px 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.sidebar-content {
+	padding: 10px 0px;
+	box-sizing: border-box;
+	border-top: 1px solid rgba(0,0,0,0.14);	
+}
+
+.sidebar-option {
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 14px;
+	color: #555;
+	height: 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.sidebar-suboption {
+	padding: 10px 40px;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: normal;
+	color: #555;
+	text-decoration: none;
+	display: block;
+	height: 16px;
+}
+
+.sidebar-subsuboption {
+	padding: 10px 60px;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: normal;
+	color: #555;
+	text-decoration: none;
+	display: block;
+	height: 16px;
+}
+
+.sidebar-option:hover,
+.sidebar-suboption:hover,
+.sidebar-subsuboption:hover {
+	background-color: #eee;
+}
+
+.sidebar-suboption-container {
+	overflow: hidden;
+	transition: height 0.5s;
+}
+
+.sidebar-subsuboption-container {
+	overflow: hidden;
+	transition: height 0.5s;
+}
+
+.sidebar-wrapper {
+	min-height: 100%;
+}
+
+.section {
+	display: table;
+	margin: 20px auto;
+	width: 90%;
+}
+
+.section-title {
+    padding: 20px 0px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0389c5;
+}
+
+.section-explanation,
+.section-content {
+    display: inline-block;
+    vertical-align: top;
+    height: auto;
+    padding: 0 20px;
+}
+
+.section-content-wrapper {
+	display: table;
+	margin: 0 auto;
+}
+
+.section-code {
+	display: inline-block;
+	vertical-align: top;
+    padding: 0 20px;
+}
+
+.section-explanation,
+.section-content,
+.section-code {
+	width: calc(100% - 40px);
+}
+
+@media (min-width: 900px) {
+	.section-explanation,
+	.section-content,
+	.section-code {
+		width: calc(50% - 40px);
+		height: 100%;
+	}
+}
+
+#myselect-container,
+#myselect-container2,
+#myselect-container3 {
+	margin: 10px;
+	display: inline-block;
+}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background-color: #f0f0f0;
+}
+
+.medidor {
+	position: absolute;
+	box-sizing: border-box;
+	color: #aaa;
+	border-color: #aaa;
+	font-size: 8px;
+}
+
+.medidor.sup {
+	top: 0px;
+	border-bottom: 1px solid;
+}
+
+.medidor.inf {
+	bottom: 0px;
+	border-top: 1px solid;
+}
+
+.medidor.lef {
+	left: 0px;
+	border-right: 1px solid;
+}
+
+.medidor.rig {
+	right: 0px;
+	border-left: 1px solid;
+}
+
+.color {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.color-label,
+.color-container {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.color-container {
+	height: 50px;
+	line-height: 50px;
+}
+
+.color-label {
+	font-weight: bold;
+	width: 130px;
+}
+
+.color-container {
+	width: calc(100% - 150px);
+}
+
+.color-code {
+	margin-left: 20px;
+}
+
+.color-code.light {
+	color: white;
+}
+
+.color-code.dark {
+	color: black;
+}
+
+.important-label{
+	color: #555;
+	font-weight: bold;
+}
+
+.tittle-example{
+	width: 100%;
+	text-align: left;
+	color: #555;
+	font-size: 18px;
+}
+
+.layout-container {
+	height: 700px;
+	border: 1px solid #bbb;
+	position: relative;
+	background-color: #f0f0f0;
+}
+
+.tick line {
+	display: none;
+}
+
+.title-header {
+    position: absolute;
+    background-color: white;
+    font-weight: bold;
+    font-size: 25px;
+    top: 46px;
+    left: 0px;
+    height: 46px;
+    color: #0389c5;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    padding: 0 46px;
+    width: calc(100% - 92px);
+}
+
+.title-header i {
+	font-size: 26px;
+}
+
+.title-header-icon,
+.title-header-options {
+	width: 26px;
+	height: 26px;
+	padding: 10px;
+}
+
+.title-header-icon {
+	float: left;
+}
+
+.title-header-txt {
+    line-height: 46px;
+    font-size: 24px;
+	float: left;
+}
+
+.title-header-options {
+	float: right;
+	color: #bbb;
+	cursor: pointer;
+}
+
+.title-header:hover .title-header-options {
+	color: #777;
+}
+
+.working-area-wrapper {
+	margin: 20px 46px;
+}
+
+.working-area {
+	margin: 0 auto;
+	margin-top: 112px;
+	background-color: #EEA041;
+	color: white;
+	text-align: center;
+	height: 522px;
+	line-height: 522px;
+	font-size: 24px;
+	min-width: 600px;
+	max-width: 1320px;
+}
+
+.footer-container {
+	height: 46px;
+	margin: 0 auto;
+	width: 375px;
+}
+
+.footer-img,
+.footer-txt {
+	display: inline-block;
+	vertical-align: middle;
+	height: 46px;
+	line-height: 46px;
+}
+
+.footer-img {
+    background-image: url("../images/logo-myobserver2014.png");
+    background-size: 141px 26px;
+    background-repeat: no-repeat;
+    width: 141px;
+    background-position: 0px 10px;
+}
+
+.footer-txt {
+	font-size: 13px;
+}
+
+.img-sample {
+	margin: 0 auto;
+}
+
+.img-sample.owned {
+	height: 178px;
+    width: 135px;
+    background-image: url('../images/sample_img.jpg');
+    background-size: 168px 200px;
+    background-position: -13px -14px;
+    background-repeat: no-repeat;
+}
+
+.img-sample.external {
+	width: 200px;
+}
+
+.img-sample.external img {
+	width: 100%;
+}
+
+#slider1-container, 
+#slider2-container, 
+#slider3-container {
+	margin: 20px;
+}
+
+
+
+/* Components */
+
+/* Button */
+.mybutton {
+	color: white;
+	background-color: #0389c5;
+	padding: 10px 15px;
+	font-size: 16px;
+	cursor: pointer;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	transition: background-color 0.3s;
+	/* estilos solo para ordenar elementos en la guía */
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.mybutton:hover {
+	background-color: #24ACE9;
+}
+
+.mybutton.disabled {
+	background-color: #ddd;
+}
+
+.mybutton.disabled:hover {
+	background-color: #ddd;
+}
+
+/* Input */
+.myinput {
+    font-size: 16px;
+    color: #0389c7;
+    font-weight: normal;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    border-radius: 4px;
+    /* estilos solo para ordenar elementos en la guía */
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.myinput[disabled] {
+	background-color: #eee;
+}
+
+.myinput:focus {
+    border-color: #24ACE9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+/* Radio Button */
+.myradio-container {
+    margin: 10px;
+    cursor: pointer;
+}
+
+.myradio-container.aligned {
+    display: inline-block;
+}
+
+.myradio-button {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    border-radius: 9px;
+    border: 2px solid #777;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.myradio-label {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.myradio-checked {
+    transform: scale(0);
+    margin: 2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 9px;
+    background-color: #0389c7;
+    transition: transform 0.3s;
+}
+
+.myradio-container.checked .myradio-checked {
+    transform: scale(1);
+}
+
+.myradio-container.checked .myradio-button {
+    border-color: #0389c7;
+}
+
+.myradio-container.disabled .myradio-button{
+	border-color: #ddd;
+}
+
+.myradio-container.disabled .myradio-label{
+	color: #ddd;
+}
+
+/* Table */
+.mytable {
+	padding: 15px;
+	text-align: left;
+	font-size: 0;
+}
+
+.mytable-header {
+	font-weight: bold;
+}
+
+.mytable-header,
+.mytable-row {
+	padding: 5px 20px;
+}
+
+.mytable-row {
+	border-top: 1px solid #ddd;
+}
+
+.mytable-field {
+	padding: 5px 0px;
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	width: calc(100% / 3);
+}
+
+/* Checkbox */
+.mycheckbox-container {
+    margin: 10px;
+    cursor: pointer;
+}
+
+.mycheckbox-container.aligned {
+    display: inline-block;
+}
+
+.mycheckbox-checkbox {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    border: 2px solid #777;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.mycheckbox-container.checked .mycheckbox-checkbox{
+    background-color: #0389c7;
+    border-color: #0389c7;
+}
+
+.mycheckbox-checkbox i {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+}
+
+.mycheckbox-label {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.mycheckbox-container.disabled .mycheckbox-checkbox{
+	border-color: #ddd;
+}
+
+.mycheckbox-container.disabled .mycheckbox-label{
+	color: #ddd;
+}
+
+/* Tabs */
+.mytab-container {
+	text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.mytab-tab {
+	box-sizing: border-box;
+	display: inline-block;
+	padding: 5px 15px;
+	cursor: pointer;
+}
+
+.mytab-tab.active {
+	border-bottom: 2px solid #0389c7;
+	color: #0389c7;
+}
+
+.mytab-tab.disabled {
+	color: #ddd;
+}
+
+/* Box */
+.mybox {
+    background-color: white;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+
+.mybox,
+.mybox-header,
+.mybox-content {
+	padding: 10px;
+}
+
+/* Dialog */
+.mydialog {
+	background-color: white;
+	visibility: hidden;
+	position: fixed;
+	opacity: 0;
+	padding: 10px;
+	width: 500px;
+	height: 200px;
+	left: calc(50% - 270px);
+	top: calc(50% - 120px);
+    box-shadow: 0 16px 28px 0 rgba(0,0,0,0.22);
+    transform: translateY(80px) scale(0.5);
+    transition: transform 0.3s, visibility 0.3s, opacity 0.3s;
+    z-index: 999;
+}
+
+.mydialog.visible {
+	visibility: visible;
+	transform: translateY(0px) scale(1);
+	opacity: 1;
+}
+
+.mydialog-mask {
+	visibility: hidden;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0;
+	top: 0px;
+	left: 0px;
+	z-index: 998;
+	transition: visibility 0.3s, opacity 0.3s;
+}
+
+.mydialog-mask.visible {
+	visibility: visible;
+	opacity: 0.5;
+}
+
+.mydialog .mydialog-header,
+.mydialog .mydialog-footer {
+	padding: 10px;
+	height: 20px;
+}
+
+.mydialog .mydialog-header {
+	font-weight: bold;
+}
+
+.mydialog .mydialog-content {
+	padding: 10px;
+	height: calc(100% - 100px);
+}
+
+.mydialog-footer {
+	text-align: right;
+	font-weight: bold;
+}
+
+.mydialog-footer .mydialog-button {
+	cursor: pointer;
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.mydialog-footer .mydialog-button.action {
+ 	color: #0389c7;
+}
+
+.mydialog-footer .mydialog-button.disabled {
+ 	color: #ddd;
+}
+
+ /* Alerts */
+.myalert {
+	padding: 10px 20px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	margin: 20px 0px;
+	text-align: center;
+}
+
+.myalert.default {
+	background-color: white;
+	color: #777;
+}
+
+.myalert.info {
+	background-color: #D1F3FF;
+	color: #0389c5;
+}
+
+.myalert.warning {
+	background-color: #e46c0a;
+	color: white;
+}
+
+/* Menus */
+.mymenu {
+	position: absolute;
+	top: 0;
+	padding: 10px;
+}
+
+.mymenu.left {
+	left: 0;
+	text-align: left;
+}
+
+.mymenu.right {
+	right: 0;
+	text-align: right;
+}
+
+.mymenu i {
+	border-radius: 14px;
+	padding: 2px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.mymenu i:hover {
+	background-color: #eee;
+}
+
+.mymenu .mymenu-container {
+	position: absolute;
+	background-color: white;
+	overflow: hidden;
+	transform: scale(0);
+	transition: transform 0.3s;
+	z-index: 999;
+}
+
+.mymenu.left .mymenu-container {
+	left: 10px;
+	box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+	transform-origin: top left;
+}
+
+.mymenu.right .mymenu-container {
+	right: 10px;
+	box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.3);
+	transform-origin: top right;
+}
+
+.mymenu.visible .mymenu-container {
+	transform: scale(1);
+}
+
+.mymenu .mymenu-option {
+	padding: 10px 20px;
+	cursor: pointer;
+    white-space: nowrap;
+}
+
+.mymenu .mymenu-option:hover {
+	background-color: #eee;
+}
+
+/* Switches */
+.myswitch {
+	position: relative;
+    height: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.myswitch .myswitch-trail {
+    background-color: #bbb;
+    width: 36px;
+    height: 14px;
+    border-radius: 7px;
+    margin: 3px 0px;
+    position: absolute;
+    top: 0px;
+    transition: background-color 0.3s;
+}
+
+.myswitch.active .myswitch-trail {
+	background-color: #24ACE9;
+	opacity: 0.6
+}
+
+.myswitch .myswitch-button {
+	width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    transform: translatex(0px);
+    transition: background-color 0.3s, 
+    			transform 0.3s;
+}
+
+.myswitch.active .myswitch-button {
+	transform: translatex(16px);
+	background-color: #0389c5;
+}
+
+.myswitch.disabled .myswitch-trail {
+	background-color: #eee;
+}
+
+.myswitch.disabled .myswitch-button {
+	background-color: #ddd;
+}
+
+/* Indicators */
+.myindicator {
+	min-width: 220px; 
+	height: 80px; 
+	margin: 10px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	color: white;
+}
+
+.myindicator.wide {
+	min-width: 280px;
+}
+
+.myindicator-content {
+	padding: 15px;
+	line-height: 1.5;
+	float: left;
+	width: calc(50% - 30px);
+	height: 50px;
+	text-align: center;
+}
+
+.myindicator-content:nth-child(1) {
+	width: 80px;
+}
+
+.myindicator-content:nth-child(2) {
+	width: calc(100% - 140px);
+}
+
+.myindicator.wide .myindicator-content:nth-child(1) {
+	width: calc(100% - 140px);
+}
+
+.myindicator.wide .myindicator-content:nth-child(2) {
+	width: 80px;
+}
+
+.myindicator.mentions .myindicator-content:nth-child(2) {
+	background-color: #0389c5;
+}
+
+.myindicator.mentions .myindicator-content:nth-child(1) {
+	background-color: #24ACE9;
+}
+
+.myindicator.visibility .myindicator-content:nth-child(2) {
+	background-color: #E46C0A;
+}
+
+.myindicator.visibility .myindicator-content:nth-child(1) {
+	background-color: #FFA939;
+}
+
+.myindicator.sentiment .myindicator-content:nth-child(2) {
+	background-color: #487B4A;
+}
+
+.myindicator.sentiment .myindicator-content:nth-child(1) {
+	background-color: #66BB6A;
+}
+
+.myindicator .myindicator-content .myindicator-title {
+	font-size: 14px;
+	margin-top: -10px;
+}
+
+.myindicator .myindicator-content .myindicator-sentiment-text {
+	font-size: 11px;
+    line-height: 1.4;
+}
+
+.myindicator-content i {
+	font-size: 14px;
+	margin-top: 2px;
+	float: left;
+}
+
+.myindicator-content .sentiment-chart {
+	float-left;
+	width: calc(100% - 25px);
+	margin-left: 25px;
+	height: calc(100% / 3);
+}
+
+/* Charts */
+.mybox.piechart,
+.mybox.rowchart,
+.mybox.stackedchart {
+	min-width: 240px;
+    height: 260px;
+    margin: 10px;
+    padding: 20px;
+}
+
+.mybox.evolutive {
+	min-width: 440px;
+    height: 240px;
+    margin: 10px;
+    padding: 20px;
+}
+
+.mybox.special {
+	min-width: 540px;
+    height: 540px;
+    margin: 10px;
+    padding: 20px;
+}
+
+.mybox.chart .mybox-header {
+	font-size: 18px;
+    line-height: 18px;
+    height: 20px;
+    padding: 0px;
+}
+
+.mybox.chart .mybox-content {
+	padding: 0px;
+}
+
+.mybox.chart .myreset {
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	text-align: center;
+}
+
+.mybox.chart .myreset span {
+	cursor: pointer;
+	color: #0389C7;
+}
+
+.mybox.chart .mychart {
+	height: 220px;
+}
+
+.mybox.chart.evolutive .mychart {
+	height: 200px;
+}
+
+.mybox.chart.special .mychart {
+	height: 500px;
+}
+
+.legenda,
+.charto {
+    height: 100%;
+    opacity: 0.3;
+}
+
+.mybox.piechart .legenda {
+    min-width: 130px;
+}
+
+.mybox.rowchart .legenda {
+    min-width: 150px;
+}
+
+.legenda {
+    background-color: #6D6557;
+    position: absolute;
+    width: 50%;
+}
+
+.charto {
+    background-color: #C0D3E6;
+    width: 100%;
+}
+
+.mybox.stackedchart .legenda,
+.mybox.stackedchart .charto {
+	width: 100%;
+}
+
+.mybox.stackedchart .legenda {
+	height: 50%;
+	min-height: 110px;
+	top: 110px;
+}
+
+.mybox.stackedchart .charto {
+	height: 100%;
+}
+
+/* Sliders */
+.myslider.noUi-connect,
+.myslider .noUi-connect {
+	background-color: #0389c5;
+	box-shadow: none;
+}
+
+.myslider.noUi-horizontal {
+	height: 4px;
+}
+
+.myslider.noUi-target {
+	border: none;
+}
+
+.myslider.noUi-target.noUi-connect {
+	box-shadow: none;
+}
+
+.myslider .noUi-handle {
+    border: 1px solid #0389c5;
+    box-shadow: none;
+}
+
+.myslider.noUi-horizontal .noUi-handle {
+    width: 14px;
+    height: 14px;
+    left: -10px;
+    top: -5px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    background-color: #0389c5;
+    transition: all 0.2s;
+}
+
+.myslider.noUi-horizontal .noUi-handle:active {
+    width: 24px;
+    height: 24px;
+    left: -15px;
+    top: -10px;
+}
+
+.myslider .noUi-handle:before,
+.myslider .noUi-handle:after {
+	content: none;
+}
+
+.myslider.noUi-background,
+.myslider .noUi-background {
+	background-color: #ddd;
+	box-shadow: none;
+}
+
+.myslider[disabled].noUi-connect, 
+.myslider[disabled] .noUi-connect {
+    background: #bbb;
+    box-shadow: none;
+}
+
+.myslider[disabled].noUi-origin,
+.myslider[disabled] .noUi-handle {
+    background-color: #bbb;
+    border: 1px solid #bbb;
+}

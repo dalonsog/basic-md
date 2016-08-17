@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyStyle - MyObserver Design Guide</title>
+		<link href="css/prism.css" rel="stylesheet" type="text/css">
+		<link href="css/mystyle.css" rel="stylesheet" type="text/css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width">
+		<meta name="keywords" content="">
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="mydialog-mask"></div>
+		<div class="mydialog">
+			<div class="mydialog-header">
+				Cabecera del diálogo
+				<div class="medidor lef" style="height: 20px; width: 20px;">
+					20px
+				</div>
+			</div>
+			<div class="mydialog-content">
+				<div>Contenido del diálogo bla bla bla</div>
+				<div>Contenido del diálogo bla bla bla</div>
+				<div>Contenido del diálogo bla bla bla</div>
+				<div>Contenido del diálogo bla bla bla</div>
+				<div>Contenido del diálogo bla bla bla</div>
+			</div>
+			<div class="mydialog-footer">
+				<div class="medidor rig" style="height: 20px; width: 20px; margin-top: -20px;">
+					20px
+				</div>
+				<div class="mydialog-button">Cancelar</div>
+				<div class="mydialog-button action">Aceptar</div>
+				<div class="medidor inf" style="height: 20px; width: 20px;left: 421px;top: 195px;">
+					20px
+				</div>
+			</div>
+			<div class="medidor lef sup" style="height: 20px; width: 20px;">
+				20px
+			</div>
+			<div class="medidor lef inf" style="height: 20px; width: 20px;">
+				20px
+			</div>
+			<div class="medidor rig sup" style="height: 20px; width: 20px;">
+				20px
+			</div>
+			<div class="medidor rig inf" style="height: 20px; width: 20px;">
+				20px
+			</div>
+		</div>
+		<div class="navbar">
+			<div class="menu-icon">
+				<i class="material-icons">menu</i>
+			</div>
+			<div class="title">Componentes - Diálogos</div>
+		</div>
+		<div class="sidebar close">
+			<div class="sidebar-wrapper">
+				<div class="sidebar-header">MyStyle</div>
+				<div class="sidebar-content"></div>
+			</div>
+		</div>
+		<div class="sidebar-mask close"></div>
+		<div class="container">
+			<div class="section">
+				<div class="section-explanation">
+				<div class="section-title">Definición</div>
+					Los diálogos tendrán fondo blanco, sombra z3 y un padding de 20px en todos sus lados. Contendrán una cabecera, un contenido y un pie donde irán los botones. La cabecera, el contenido y el pie estarán separados, a su vez, por un márgen de 20px. Los diálogos se mostrarán en el centro de la pantalla, sobre un fondo negro con 50% de opacidad que ocupará toda la página.
+					<p>Los textos de la cabecera irán en negrita, y tanto la cabecera como el contenido estará alineado a la izquierda. Los botones irán en negrita, estarán alineados a la derecha y separados entre ellos por, al menos, 20px. El botón de acción (en caso de que exista) irá en color azul MyObserver.</p>
+					<p>Los diálogos apareceran con transición, partiendo de una opacidad del 0%, anchura al 70% y trasladado 80px hacia abajo. El fondo partirá de una opacidad del 0%. Ambas transiciones serán simultáneas. Salvo que se especifique lo contrario, pulsar fuera del diálogo lo cerrará.</p>
+				</div>
+				<div class="section-content">
+					<div class="section-title">Ejemplo</div>
+					<div class="section-content-wrapper">
+						<div class="mybutton" id="open_dialog_button">Click Me!</div>
+					</div>
+				</div>
+			</div>
+			<div class="section">
+				<div class="section-code">
+					<div class="section-title">HTML Code</div>
+					<pre><code class="language-html">&lt;div class="mydialog-mask"&gt;&lt;/div&gt;
+&lt;div class="mydialog"&gt;
+	&lt;div class="mydialog-header"&gt;
+		Cabecera del diálogo
+	&lt;/div&gt;
+	&lt;div class="mydialog-content"&gt;
+		&lt;div>Contenido del diálogo bla bla bla&lt;/div&gt;
+		&lt;div>Contenido del diálogo bla bla bla&lt;/div&gt;
+		&lt;div>Contenido del diálogo bla bla bla&lt;/div&gt;
+		&lt;div>Contenido del diálogo bla bla bla&lt;/div&gt;
+		&lt;div>Contenido del diálogo bla bla bla&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="mydialog-footer"&gt;
+		&lt;div class="mydialog-button"&gt;
+			Cancelar
+		&lt;/div&gt;
+		&lt;div class="mydialog-button action"&gt;
+			Aceptar
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+					<div class="section-title">JavaScript Code</div>
+					<pre><code class="language-js">// Abrir diálogo
+$('#open_dialog_button').on('click', function(){
+	$('.mydialog, .mydialog-mask').addClass('visible')
+	$('body').css('overflow-y','hidden');
+});
+// Cerrar diálogo
+$('.mydialog-mask, .mydialog-button').on('click', function(){
+	$('.mydialog, .mydialog-mask').removeClass('visible')
+	$('body').css('overflow-y','auto');
+	// Codificar funcionalidad de cada botón por separado si
+	// su función no es cerrar el diálogo
+});</code></pre>
+				</div>
+				<div class="section-code">
+					<div class="section-title">CSS Code</div>
+					<pre><code class="language-css">.mydialog {
+	background-color: white;
+	visibility: hidden;
+	position: fixed;
+	opacity: 0;
+	padding: 10px;
+	width: 500px;
+	height: 200px;
+	left: calc(50% - 270px);
+	top: calc(50% - 120px);
+    box-shadow: 0 16px 28px 0 rgba(0,0,0,0.22);
+    transform: translateY(80px) scale(0.5);
+    transition: transform 0.3s, visibility 0.3s, opacity 0.3s;
+    z-index: 999;
+}
+.mydialog.visible {
+	visibility: visible;
+	transform: translateY(0px) scale(1);
+	opacity: 1;
+}
+.mydialog-mask {
+	visibility: hidden;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0;
+	top: 0px;
+	left: 0px;
+	z-index: 998;
+	transition: visibility 0.3s, opacity 0.3s;
+}
+.mydialog-mask.visible {
+	visibility: visible;
+	opacity: 0.5;
+}
+.mydialog .mydialog-header,
+.mydialog .mydialog-footer {
+	padding: 10px;
+	height: 20px;
+}
+.mydialog .mydialog-header {
+	font-weight: bold;
+}
+.mydialog .mydialog-content {
+	padding: 10px;
+	height: calc(100% - 100px);
+}
+.mydialog .mydialog-footer {
+	text-align: right;
+	font-weight: bold;
+}
+.mydialog .mydialog-footer .mydialog-button {
+	cursor: pointer;
+	display: inline-block;
+	margin-left: 20px;
+}
+.mydialog .mydialog-footer .mydialog-button.action {
+ 	color: #0389c7;
+}</code></pre>
+				</div>
+			</div>
+		</div>
+		<!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="js/prism.js" type="text/javascript"></script>
+		<script src="js/options.js" type="text/javascript"></script>
+		<script src="js/mystyle.js" type="text/javascript"></script>
+	</body>
+</html>
